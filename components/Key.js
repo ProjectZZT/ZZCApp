@@ -4,6 +4,7 @@ import {
   View,
   TouchableOpacity,
   StyleSheet,
+  Dimensions
 } from 'react-native';
 
 
@@ -15,15 +16,16 @@ export default class Key extends React.Component {
   }
 
   _onPress() {
-    this.props.echoSymbol(this.props.symbol);  
+    this.props.echoSymbol(this.props.symbol);
   }
-  
+
   render() {
+    var { height, width } = Dimensions.get('window');
     return (
       <TouchableOpacity
         style={this.props.op ? [styles.key, styles.opkey] : styles.key}   //조건에 따라 두 식 중 하나를 반환합니다. 조건부(삼항) 연산자(?:)
         onPress={this._onPress}>
-        <View>      
+        <View>
           <Text style={[styles.keytext, this.props.op && styles.opkeytext]}>
             {this.props.symbol}
           </Text>
@@ -35,23 +37,33 @@ export default class Key extends React.Component {
 
 const styles = StyleSheet.create({
   key: {
-    borderRadius: 5,
+    // borderRadius: 5,
     borderWidth: StyleSheet.hairlineWidth,
-    borderColor: '#2f95dc',
+    borderColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 60,
-    height: 60,    
+    flex: 1, alignSelf: 'stretch', width: '99%', height: '99%',
+    backgroundColor: '#fff',
+    // marginLeft: 0.5,
+    // marginRight: 0.5,
   },
   keytext: {
     fontSize: 20,
-    color: '#2f95dc'
+    color: '#808080'
   },
   opkey: {
-    // backgroundColor: '#4f9a94',
-    marginRight: 10,
+    // borderRadius: 5,
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1, alignSelf: 'stretch', width: '99%', height: '99%',
+    backgroundColor: '#fff',
+    // marginLeft: 0.5,
+    // marginRight: 0.5,
+    marginBottom: 20,
   },
   opkeytext: {
-    color: '#2f95dc',
+    color: '#2171b3',
   },
 });

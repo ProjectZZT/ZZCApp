@@ -58,18 +58,19 @@ export default class SiUnitsBox extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 7,
-    backgroundColor: "#fff"
+    backgroundColor: "#2171b3"
   },
   siunitbox: {
     flex: 1,
     paddingLeft: 8,
     paddingRight: 8,
-    backgroundColor: "#fff",
-    justifyContent: "flex-start"
+    backgroundColor: "#2171b3",
+    justifyContent: "flex-start",
+    marginTop: 30
   },
   siunittext: {
-    fontSize: 32,
+    fontSize: 15,
     textAlign: "center",
-    color: "#2f95dc"
+    color: "#fff"
   }
 });

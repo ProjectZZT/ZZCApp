@@ -8,23 +8,23 @@ export default class App extends React.Component {
     isLoadingComplete: false,
   };
 
-  render(){
+  render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
       return (
         <AppLoading
-          startAsync = {this._loadResourcesAsync}
-          onError = {this._handleLoadingError}
-          onFinish = {this._handleFinishLoading}
+          startAsync={this._loadResourcesAsync}
+          onError={this._handleLoadingError}
+          onFinish={this._handleFinishLoading}
         />
       );
     } else {
       return (
 
-          <View style={styles.container}>
-            {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-            <AppNavigator />
-          </View>
-        
+        <View style={styles.container}>
+          {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
+          <AppNavigator />
+        </View>
+
 
       );
     }
@@ -37,6 +37,15 @@ export default class App extends React.Component {
         require('./assets/images/icon.png'),
         require('./assets/images/intro.png'),
         require('./assets/images/intro2.png'),
+        require('./assets/images/meter.png'),
+        require('./assets/images/kilograms.png'),
+        require('./assets/images/second.png'),
+        require('./assets/images/ampere.png'),
+        require('./assets/images/kelvin.png'),
+        require('./assets/images/mole.png'),
+        require('./assets/images/candela.png'),
+        require('./assets/images/right-arrow.png'),
+        require('./assets/images/left-arrow.png'),
       ]),
       Font.loadAsync({
         // This is the font that we are using for our tab bar
@@ -57,7 +66,7 @@ export default class App extends React.Component {
   _handleFinishLoading = () => {
     this.setState({ isLoadingComplete: true });
   };
- 
+
 }
 
 const styles = StyleSheet.create({

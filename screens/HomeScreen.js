@@ -18,31 +18,37 @@ export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
-                                                                                              
-  render() {
-    var {height, width} = Dimensions.get('window');
-    return (
-      <View style={styles.container}>
-        <View style={styles.container} contentContainerStyle={styles.
-          contentContainer}>
-          <Swiper showsButtons={true} autoplay={true}>
-            <View style={styles.slide1}>
-              <Image style={{flex: 1, alignSelf: 'stretch', width: '99%', height: '99%'}} source={require('../assets/images/intro.png')} />
-            </View>
-            <View style={styles.slide2}>
-              <Image style={{flex: 1, alignSelf: 'stretch', width: '99%', height: '99%'}} source={require('../assets/images/intro2.png')}/>
-            </View>
-          </Swiper>
-        </View>
-        {/* 추후 광고 삽입시 사용 뷰 */}
-        {/* <View style={styles.tabBarInfoContainer}> 
-          <Text style={styles.tabBarInfoText}>This is a tab bar. You can edit it in:</Text>
 
-          <View style={[styles.codeHighlightContainer, styles.navigationFilename]}>
-            <MonoText style={styles.codeHighlightText}>navigation/MainTabNavigator.js</MonoText>
+  render() {
+    var { height, width } = Dimensions.get('window');
+    return (
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.scrollcontainer}>
+        <View style={styles.container}>
+          <View style={styles.container} contentContainerStyle={styles.contentContainer}>
+            <Swiper showsButtons={false} autoplay={true} showsPagination={true} autoplayTimeout={5} >
+              <View style={styles.slide1}>
+                <Image style={{ flex: 1, alignSelf: 'stretch', width: '99%' }} source={require('../assets/images/intro3.png')} />
+              </View>
+              <View style={styles.slide2}>
+                <Image style={{ flex: 1, alignSelf: 'stretch', width: '99%' }} source={require('../assets/images/intro2.png')} />
+              </View>
+            </Swiper>
           </View>
-        </View> */}
-      </View>
+        </View>
+        <View style={styles.container}>
+          <View style={styles.container} contentContainerStyle={styles.contentContainer}>
+            <Swiper showsButtons={false} autoplay={true} showsPagination={true} autoplayTimeout={5} >
+              <View style={styles.slide1}>
+                <Image style={{ flex: 1, alignSelf: 'stretch', width: '99%' }} source={require('../assets/images/intro3.png')} />
+              </View>
+              <View style={styles.slide2}>
+                <Image style={{ flex: 1, alignSelf: 'stretch', width: '99%' }} source={require('../assets/images/intro2.png')} />
+              </View>
+            </Swiper>
+          </View>
+        </View>
+
+      </ScrollView>
     );
   }
 
@@ -81,6 +87,9 @@ export default class HomeScreen extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  scrollcontainer: {
+    backgroundColor: "#fff",
+  },
   container: {
     flex: 1,
     backgroundColor: '#fff',

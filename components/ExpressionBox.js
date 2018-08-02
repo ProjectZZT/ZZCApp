@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet } from 'react-native';
+import { TextInput, StyleSheet } from 'react-native';
 
 export default class ExpressionBox extends Component {
   constructor(props){
@@ -8,7 +8,7 @@ export default class ExpressionBox extends Component {
 
   render() {
     return (
-      <Text style={styles.expressionbox}>{this.props.expression}</Text>
+        <TextInput allowFontScaling={true} editable={false} multiline={true} style={styles.expressionbox}>{this.props.expression}</TextInput>
       );
   }
 }
@@ -19,8 +19,9 @@ const styles = StyleSheet.create({
     paddingLeft: 8,
     paddingRight: 8,
     backgroundColor: '#fff',
-    fontSize: 32,
-    textAlign: 'center',
-    color: '#2f95dc',
+    fontSize: 52,
+    textAlign: 'right',
+    color: '#2171b3',
+    marginTop: 30
   }
 });
